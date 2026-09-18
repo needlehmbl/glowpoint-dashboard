@@ -65,42 +65,6 @@ performance.
 | Email       | Brevo (`BREVO_API_KEY`) + Supabase Edge Function for reminders        |
 | Utilities   | crypto-js (AES), date-fns, xlsx export, sonner (toasts), next-themes  |
 
-## Getting started
-
-### 1. Install dependencies
-
-```bash
-npm install
-```
-
-### 2. Configure environment variables
-
-Create a `.env` file in the project root:
-
-```bash
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-project-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-
-# Server-only secrets
-ENCRYPTION_KEY=your-aes-encryption-key
-BREVO_API_KEY=your-brevo-api-key
-```
-
-Environment files are gitignored — never commit real keys.
-
-### 3. Run
-
-```bash
-npm run dev     # dev server with Turbopack (http://localhost:3000)
-npm run build   # production build
-npm run start   # start the production server
-npm run lint    # run ESLint
-```
-
-The app is configured with `output: "standalone"`, so the production build can be
-shipped as a self-contained server bundle or deployed to a platform like Vercel.
-
 ## Project structure
 
 ```
@@ -127,14 +91,9 @@ supabase/
 
 ## Deployment
 
-1. Set the environment variables above on your host.
+1. Set the required environment variables (`NEXT_PUBLIC_SUPABASE_URL`,
+   `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ENCRYPTION_KEY`, `BREVO_API_KEY`) on
+   your host.
 2. Run `npm run build`.
 3. Start with `npm run start` (the `PORT` env var is honoured), or deploy the
    `standalone` output.
-
-## Database
-
-The app talks to a shared Supabase project (tables such as `Appointments`,
-`Services`, `ServiceCategories`, `Profiles`, `Feedback`, and `Payments`). The
-customer app reads/writes the same project, so dashboard changes are reflected in
-the booking flow immediately.
