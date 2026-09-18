@@ -11,7 +11,7 @@ services, and users, view the calendar and live queue, and track business
 performance.
 
 > Customer-facing booking app:
-> [`glowpoint-client`](https://github.com/Needleeeeeeee/glowpoint-client).
+> [`glowpoint-client`](https://github.com/needlehmbl/glowpoint-client).
 
 ## Features
 
